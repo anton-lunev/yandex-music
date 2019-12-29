@@ -1,0 +1,52 @@
+{
+  "name": "YandexMusic",
+  "productName": "Yandex Music",
+  "version": "1.0.0",
+  "description": "Yandex Music electron app",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "build-mac": "electron-forge make --platform darwin",
+    "build-win": "electron-forge make --platform win32",
+    "build-linux": "electron-forge make --platform linux"
+  },
+  "keywords": [],
+  "author": {
+    "name": "antonlunev",
+    "email": "2hammer90@mail.ru"
+  },
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "icon": "src/og-image.icns"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "Yandex Music"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.47",
+    "@electron-forge/maker-deb": "^6.0.0-beta.47",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.47",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.47",
+    "@electron-forge/maker-zip": "^6.0.0-beta.47",
+    "electron": "7.1.7"
+  }
+}
